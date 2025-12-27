@@ -2,7 +2,7 @@ package com.example.netbanking.model;
 
 import java.time.OffsetDateTime;
 
-import org.hibernate.validator.constraints.UUID;
+import java.util.UUID;
 
 import com.example.netbanking.model.enums.UserRole;
 

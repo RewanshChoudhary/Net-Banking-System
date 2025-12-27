@@ -2,10 +2,10 @@ package com.example.netbanking.model;
 
 import java.math.BigDecimal;
 import java.time.OffsetDateTime;
-
-import org.hibernate.validator.constraints.UUID;
+import java.util.UUID;
 
 import com.example.netbanking.model.enums.AccountStatus;
+import com.example.netbanking.model.enums.AccountType;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -16,10 +16,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-import lombok.Data;
 
 @Entity
-@Data
 @Table(name = "accounts")
 public class Accounts {
   @Id
@@ -32,29 +30,21 @@ public class Accounts {
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "owner_id", nullable = false)
 
-  private Users owner; 
-  @Column(name="balance",nullable=false)
+  private Users owner;
+  @Column(name = "balance", nullable = false)
 
   private BigDecimal balance;
   @Enumerated(EnumType.STRING)
-  @JoinColumn(name="account_status",nullable = false)
+  @JoinColumn(name = "account_status", nullable = false)
 
   private AccountStatus status;
 
   @Enumerated(EnumType.STRING)
-  @JoinColumn(name="acccunt_type", nullable=false)
+  @JoinColumn(name = "acccunt_type", nullable = false)
 
   private AccountType accountType;
-  @Column(name="created_at",nullable=false)
-
+  @Column(name = "created_at", nullable = false)
 
   private OffsetDateTime createdAt;
-
-
-
-  
-
-
-
 
 }
