@@ -12,12 +12,13 @@ import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.Builder;
 import lombok.Data;
 
 @Data
-
+@Builder
 @Entity
-@Table(name = "users")
+@Table(name = "userss")
 public class Users {
 
   @Id
@@ -44,7 +45,7 @@ public class Users {
    
    
   @Enumerated(EnumType.STRING)
-  @Column(name="user_role",nullable = false)
+  @Column(name="user_role")
 
   private UserRole role;
   @Column(name="created_at",nullable = false)
