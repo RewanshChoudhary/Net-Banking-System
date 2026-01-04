@@ -36,9 +36,9 @@ public class GlobalExceptionHandler {
 
   }
 
-  @ExceptionHandler(DuplicateUserRequest.class)
-  ResponseEntity<ApiError> handleDuplicateRequest(DuplicateUserRequest ex) {
+  @ExceptionHandler(DuplicateResourceRequest.class)
+  ResponseEntity<ApiError> handleDuplicateRequest(DuplicateResourceRequest ex) {
     return ResponseEntity.status(ex.status()).body(new ApiError(400, "User already exists  ", Instant.now()));
 
-  }
+  } 
 }
