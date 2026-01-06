@@ -1,3 +1,7 @@
+package com.example.netbanking.dto;
+
+import com.example.netbanking.model.enums.AccountType;
+
 import jakarta.validation.constraints.NotBlank;
 import lombok.Builder;
 import lombok.Data;
@@ -8,7 +12,10 @@ import lombok.Data;
 public class CreateAccountDto{
 
   @NotBlank
-  public 
+
+  public AccountType accountType;
+  
+
   
 
 
